@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  php-process-app:
+    build: .
+    volumes:
+      - .:/app
+    command: php run.php

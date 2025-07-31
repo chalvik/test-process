@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace TestProcess;
 
 class Logger
 {

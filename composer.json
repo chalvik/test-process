@@ -1,13 +1,14 @@
 {
-  "name": "chalvik\test-process",
+  "name": "chalvik/test-process",
   "description": "Parallel lead processor using PHP without frameworks",
   "type": "project",
   "require": {
-    "php": "^8.2"
+    "php": "^8.2",
+    "vladimir163/lead-generator": "*"
   },
   "autoload": {
     "psr-4": {
-      "App\\": "src/"
+      "TestProcess\\": "src/"
     }
   },
   "scripts": {
@@ -20,6 +21,6 @@
       "email": "chernogorav@gmail.com"
     }
   ],
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "prefer-stable": true
 }

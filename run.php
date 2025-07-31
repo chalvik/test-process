@@ -2,12 +2,18 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-use App\LeadProcessor;
+use TestProcess\LeadProcessor;
+use LeadGenerator\Generator;
+use LeadGenerator\Lead;
 
-$leads = [];
+$generator = new Generator();
 
-// Запуск обработки
+$queue = new SplQueue();
+$generator->generateLeads(10000, function(Lead $lead) use ($queue) {
+    $queue->enqueue($lead);
+});
+
 $processor = new LeadProcessor();
-$processor->process($leads);
+$processor->processQueue($queue);
 
 echo "Обработка завершена. Лог записан в log.txt\n";

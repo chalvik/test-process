@@ -1,8 +1,10 @@
 <?php
 
-namespace App;
+namespace TestProcess;
+
+use LeadGenerator\Lead;
 
 interface LeadHandlerInterface
 {
-    public function handle(array $lead): void;
+    public function handle(Lead $lead): void;
 }
